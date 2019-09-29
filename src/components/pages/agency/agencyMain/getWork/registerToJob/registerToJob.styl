@@ -1,0 +1,89 @@
+.registerToJob
+  max-width 1140px
+  margin 0 auto
+  .registerToJobHeader
+    text-align center
+    font-family: 'Overpass'
+    font-size: 42px
+    font-weight: 600
+    color: #000000
+    margin 159px 0 22px
+
+  .registerToJobAttention
+    font-family: 'SourceSansPro'
+    font-size: 18px
+    text-align: center
+    color: #010000
+    margin 0
+
+  .formRegisterToJob
+    margin 63px 0
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    .registerToJobUserName,.registerToJobUserEmail,.registerToJobUserPhone
+      width 31%
+    .select-position
+      flex-basis 48%
+    .update-photo
+      flex-basis 48%
+      .photoToJob
+        position absolute
+        margin 0
+        padding 0
+        width: 130px
+        height: 56px
+        border: solid 2px #ef6c00
+        color: #ef6c00
+        top 0
+        right 0
+        border-radius 0 4px 4px 0
+        background none
+        z-index 1
+        &:hover
+          background #ef6c00
+          color #f1f2f2
+
+  .registerToJobSignUp
+    display block
+    margin 0 auto 149px
+    border none
+    width: 290px
+    height: 40px
+    border-radius: 4px
+    box-shadow: 3.5px 6.1px 7.6px 1.4px rgba(0, 0, 0, 0.11)
+    background-color: #d7d7d7
+    font-family: SourceSansPro;
+    font-size: 20px
+    font-weight: bold
+    color: #8d8c8c
+    outline none
+
+@media (max-width: 1024px)
+  .registerToJob
+     padding 0 10px
+    .registerToJobHeader
+      margin 139px 0 22px
+
+@media (max-width: 768px)
+  .registerToJob
+    .registerToJobHeader
+      margin 139px 0 22px
+
+@media (max-width: 425px)
+  .registerToJob
+    .registerToJobHeader
+      margin-top 0
+      font-size 26px
+
+    .registerToJobAttention
+      font-size 16px
+      max-width 280px
+      margin 0 auto
+
+    .formRegisterToJob
+      display flex
+      flex-direction column
+      padding 0 15px
+      .registerToJobUserName,.registerToJobUserEmail,.registerToJobUserPhone
+        width 100%

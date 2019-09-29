@@ -1,0 +1,102 @@
+.cheerfulUsers
+  max-width 1140px
+  margin 0 auto
+
+  h2
+    font-family: 'Overpass'
+    font-size: 42px
+    font-weight: 600
+    color: #000000
+    text-align center
+    margin 141px 0 31px
+
+  h4
+    font-family: 'Source Sans Pro'
+    font-size: 18px
+    text-align: center
+    color: #000000
+    margin-bottom 58px
+
+  .cheerfulUsersBlock
+    display grid
+    grid-template-columns repeat(auto-fill,minmax(300px,1fr))
+    .cheerfulUser
+      display flex
+      flex-wrap wrap
+      .cheerfulUserImg
+        img
+          display block
+          width 70px
+          height 70px
+          border-radius 35px
+
+      .cheerfulUserInfo
+        max-width 273px
+        padding 27px 0 0 9px
+        .cheerfulUserName
+            font-family: 'Overpass'
+            font-size: 22px
+            font-weight: bold
+            color: #000000
+        p
+          font-family: 'SourceSansPro'
+          font-size: 14px
+          font-weight: normal
+          color: #4c4b4b
+          margin 2px 0
+
+
+
+    .cheerfulUser.mobile
+      display flex
+
+  .cheerfulUsersBtn
+    display block
+    margin 56px auto 0
+    width: 290px
+    height: 40px
+    border-radius: 4px
+    box-shadow: 3.5px 6.1px 7.6px 1.4px rgba(0, 0, 0, 0.11)
+    border: solid 2px #ef6c00
+    color: #ef6c00
+    background #ffffff
+    font-family: 'Source Sans Pro'
+    font-size: 20px
+    font-weight: bold
+    outline none
+
+@media (max-width: 768px)
+  .cheerfulUsers
+    padding 70px 0
+    h2
+      margin-top 0
+    .cheerfulUsersBlock
+      .cheerfulUser
+        flex-direction column
+        align-items  center
+        text-align center
+
+@media (max-width: 425px)
+  .cheerfulUsers
+
+    h2
+      font-size 26px
+
+    h4
+      margin 0 auto 58px
+      font-size 16px
+      max-width 158px
+
+    .cheerfulUsersBlock
+      grid-auto-rows 1fr
+      color #8dc63f
+      .cheerfulUser
+        flex-direction column
+        align-items  center
+        text-align center
+        margin-bottom 30px
+        &:last-child
+          margin-bottom 0
+
+      .cheerfulUser.mobile
+        display none

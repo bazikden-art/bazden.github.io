@@ -1,0 +1,75 @@
+.assignment
+  margin 0
+  max-width 2560px
+  height 676px
+  background url('./components/pages/agency/images/imgs/banner-bg/banner-bg-2560x676.jpg') top center no-repeat
+  z-index -2
+  .assignment-layout
+    width 100%
+    height 100%
+    z-index -1
+
+    .assignment-info-block
+      max-width 1140px
+      margin  auto
+      padding-top 139px
+      z-index 1
+      h1
+        width 448px
+        font-family "Overpass",sans-serif
+        font-size 50px
+        font-weight 600
+        color #ffffff
+
+      p
+        width 532px
+        font-family 'Source Sans Pro', sans-serif
+        font-size 20px
+        line-height 1.3
+        color #ffffff
+        margin 31px 0 39px
+
+      button
+        width 290px
+        height 40px
+        border-radius 4px
+        background-color #ef6c00
+        border none
+        display block
+        color #fefefe
+        font-size 20px
+        font-family 'Source Sans Pro', sans-serif
+        font-weight bold
+
+@media (max-width: 1024px)
+  .assignment
+    .assignment-layout
+      padding-left 23px
+
+@media (max-width: 768px)
+  .assignment
+    .assignment-layout
+      .assignment-info-block
+        padding-top 118px
+        h1
+          max-width 384px
+          font-size 42px
+
+        p
+          max-width 382px
+          font-size 18px
+
+@media (max-width: 425px)
+  .assignment
+    .assignment-layout
+      max-width 289px
+      text-align center
+      .assignment-info-block
+        h1
+          max-width 267px
+          font-size 30px
+        p
+          max-width 276px
+        button
+          width 267px
+          margin 0 auto

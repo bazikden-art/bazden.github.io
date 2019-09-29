@@ -1,0 +1,146 @@
+.agencyFooter
+  max-width 100%
+  min-height 313px
+  background #283593
+  .agencyFooterLayout
+    max-width 1140px
+    margin 0 auto
+    display grid
+    grid-template-areas "header header header header header""first second third fourth fifth""footer footer footer footer footer"
+    grid-template-rows: 83px 1fr 83px
+    grid-template-columns: 31.5% repeat(4,1fr)
+
+
+    span
+      font-family: 'Source Sans Pro'
+      color: #ffffff
+
+    .agencyFooterHeader
+      grid-area header
+
+
+    .first
+      margin 30px 0 37px
+      grid-area first
+      span
+        font-family: 'Source Sans Pro'
+        font-size: 20px
+        color: #ffffff
+
+    .second
+      grid-area second
+
+    .third
+      grid-area third
+
+    .fourth
+      grid-area fourth
+
+    .fifth
+      grid-area fifth
+
+    .second,.third,.fourth,.fifth
+      margin 30px 0 37px
+      //grid-area second
+      display flex
+      flex-direction column
+      justify-content space-between
+      span
+        font-size 16px
+
+
+    .agencyFooterFooter
+      grid-area footer
+      display flex
+      justify-content space-between
+      align-items center
+      color: #ffffff
+      .agencyFooterFooterIcons
+        width 218px
+        display flex
+        justify-content space-between
+        img
+          cursor pointer
+
+@media (max-width: 1024px)
+  .agencyFooter
+    .agencyFooterLayout
+      padding 0 48px
+
+@media (max-width: 768px)
+  .agencyFooter
+    .agencyFooterLayout
+      padding 0 48px
+
+      .first
+        display flex
+        flex-direction column
+        justify-content space-between
+        img
+          display none
+        span
+          font-size 18px
+
+      .second,.third,.fourth,.fifth
+        span
+          font-size 16px
+
+//@media (max-width: 425px)
+//  grid-template-areas "header header header header header""first first first first first""footer footer footer footer footer"
+//  grid-template-rows: 1.5fr 1fr 50px
+//  .agencyFooter
+//    .agencyFooterLayout
+//      .agencyFooterHeader
+//        flex-wrap wrap
+//        justify-content center
+//        max-height 400px
+//        .agencyFooterHeaderMenu
+//          display flex
+//          flex-direction column
+//          text-align center
+//          align-content center
+//          //justify-content center
+//      .first
+//        div
+//          max-width 100%
+//          //margin 20px 0
+//      .second,.third,.fourth,.fifth
+//        display none
+//
+//      .agencyFooterFooter
+//        flex-direction column
+
+@media (max-width: 425px)
+
+  .agencyFooter
+    .agencyFooterLayout
+      grid-template-areas "header header header header header""first first first first first""footer footer footer footer footer"
+      grid-template-rows: 1.5fr 1fr 100px
+      .agencyFooterHeader
+        flex-wrap wrap
+        justify-content center
+        max-height 400px
+        .agencyFooterHeaderMenu
+          display flex
+          flex-direction column
+          text-align center
+          align-content center
+
+      .first
+        div
+          max-width 100%
+          text-align center
+
+
+      //margin 20px 0
+      .second,.third,.fourth,.fifth
+        display none
+
+      .agencyFooterFooter
+        flex-direction column-reverse
+        .agencyFooterFooterInfo
+          margin 19px 0 30px
+          font-size 12px
+
+
+@import "./agencyFooterHeader/agencyFooterHeader.styl"

@@ -1,0 +1,89 @@
+.requirements
+  margin 0
+  max-width 2560px
+  //height 676px
+  background url('./components/pages/agency/images/imgs/third-block-bg/third-block-bg-2560x692.jpg') top center no-repeat
+  background-size cover
+  .requirementsHeader
+    display block
+    text-align center
+    font-family: 'Overpass'
+    font-size: 42px
+    font-weight: 600
+    color: #ffffff
+    margin-bottom 50px
+    padding-top 139px
+
+  .requirementsBlock
+    max-width 1140px
+    margin 0 auto
+    display flex
+    //flex-wrap wrap
+
+    .requirementsTextBlock
+      max-width 550px
+      //height: 321px
+      p
+        font-family: 'SourceSansPro'
+        font-size: 16px
+        color: #fefefe
+
+    .requirementsImage
+      width 469px
+      height 361px
+      margin 0 0 102px 99px
+      img
+        width 100%
+        height 100%
+
+
+
+@media (max-width: 1024px)
+  .requirements
+    //height 755px
+    .requirementsHeader
+      padding-top 139px
+    .requirementsBlock
+      .requirementsTextBlock
+        max-width 448px
+        margin-left 47px
+
+      .requirementsImage
+        margin 0 0 154px 54px
+
+
+@media (max-width: 768px)
+  .requirements
+    .requirementsHeader
+      padding-top 119px
+    .requirementsBlock
+      .requirementsTextBlock
+        max-width 335px
+        margin-left 24px
+
+      .requirementsImage
+        width 324px
+        height 406px
+        margin 0 0 154px 54px
+
+@media (max-width: 425px)
+  .requirements
+    padding 69px 0
+    .requirementsHeader
+      margin 0
+      padding-top 0
+    .requirementsBlock
+      display flex
+      flex-direction column
+      .requirementsTextBlock
+        max-width 287px
+        margin 0 auto
+        order 1
+        text-align center
+      .requirementsImage
+        width 257px
+        height 216px
+        order 0
+        margin 34px auto 29px
+
+
