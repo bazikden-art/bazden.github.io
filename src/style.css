@@ -707,6 +707,7 @@ textarea {
   width: 100%;
   background: #fff;
   border-bottom: 1px solid #000;
+  align-items: center;
 }
 .AgencyHeaderLayout .agency-header {
   max-width: 1140px;
@@ -714,7 +715,7 @@ textarea {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
+  margin: 10px auto 0;
   background: #fff;
   z-index: 90;
 }
@@ -724,13 +725,13 @@ textarea {
 }
 .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin {
   flex-basis: 80%;
+  align-items: center;
   display: flex;
   justify-content: space-between;
 }
 .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin .agency-header-menu .agency-header-menu-item {
   padding: 0 15px;
   text-decoration: none;
-  width: 65px;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 16px;
   color: #000;
@@ -740,8 +741,7 @@ textarea {
   display: flex;
 }
 .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin .agency-login .agency-user-info .agency-user-name {
-  float: right important;
-  width: 57px;
+  text-align: right;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -780,6 +780,7 @@ textarea {
     flex-direction: column-reverse;
     justify-content: flex-end;
     position: absolute;
+    align-items: flex-start;
     top: 63px;
     background: #f2f2f2;
     overflow: hidden;
@@ -793,7 +794,7 @@ textarea {
     justify-content: center;
   }
   .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin .agency-header-menu .agency-header-menu-item {
-    width: 300px;
+    max-width: 100%;
     margin: 20px 100px 20px 0;
   }
   .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin .agency-login {
@@ -801,32 +802,24 @@ textarea {
     padding-bottom: 20px;
     border-bottom: 1px solid #000;
     margin: 20px 15px 0 15px;
+    align-self: flex-start;
   }
   .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin .agency-login .agency-login-icons .agency-user-icon {
     margin: 0;
   }
-  .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin .agency-login .agency-user-info {
-    align-items: center;
-  }
   .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin .agency-login .agency-user-info .agency-user-name {
-    float: none important;
+    text-align: left;
     margin-bottom: 5px;
   }
   .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin .agency-login img {
     display: none;
   }
   .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin.showed {
-    max-width: 30%;
+    max-width: 70%;
     transition: 0.5s;
   }
   .AgencyHeaderLayout .agency-header .AgencyHeaderMenuIcon {
     display: block;
-  }
-}
-@media (max-width: 425px) {
-  .AgencyHeaderLayout .agency-header .AgencyHeaderMenuLogin.showed {
-    max-width: 50%;
-    transition: 0.5s;
   }
 }
 .assignment {
@@ -1345,10 +1338,14 @@ textarea {
   margin: 0;
 }
 .registerToJob .formRegisterToJob {
+  z-index: 10;
   margin: 63px 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+.registerToJob .formRegisterToJob .error {
+  color: #f00;
 }
 .registerToJob .formRegisterToJob .registerToJobUserName,
 .registerToJob .formRegisterToJob .registerToJobUserEmail,
@@ -1426,6 +1423,37 @@ textarea {
   .registerToJob .formRegisterToJob .registerToJobUserEmail,
   .registerToJob .formRegisterToJob .registerToJobUserPhone {
     width: 100%;
+  }
+}
+.AgencyUsersBlock {
+  margin: 20px auto;
+}
+.AgencyUsersBlock .AgencyUsers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.AgencyUsersBlock .AgencyUsers .AgencyUser {
+  width: 300px;
+  border: 2px solid #808080;
+  border-radius: 10px;
+  margin: 10px;
+}
+.AgencyUsersBlock .AgencyUsers .AgencyUser .AgencyUsersIcon {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+.AgencyUsersBlock .AgencyUsers .AgencyUser .AgencyUsersIcon img {
+  width: 100%;
+  height: 100%;
+}
+.AgencyUsersBlock .AgencyUsers .AgencyUser .AgencyUsersInfo {
+  margin: 10px;
+}
+@media (max-width: 425px) {
+  .AgencyUser span {
+    font-size: 14px;
   }
 }
 .agencyFooter {

@@ -1,0 +1,39 @@
+.AgencyUsersBlock
+  //max-width 960px
+  margin 20px auto
+
+  .AgencyUsers
+    //margin 0 auto
+    display flex
+    flex-wrap wrap
+    justify-content center
+    //grid-template-columns repeat(auto-fill,minmax(200px,300px))
+    //justify-items   center
+    // grid-gap 10px
+
+
+    .AgencyUser
+      width 300px
+      border 2px solid grey
+      border-radius 10px
+      margin 10px
+      //&:last-child
+      //grid-column-start 2
+      //grid-column-end 3
+
+      .AgencyUsersIcon
+        width 100px
+        height 100px
+        margin 10px
+
+        img
+          width 100%
+          height 100%
+
+      .AgencyUsersInfo
+        margin 10px
+
+@media (max-width: 425px)
+  .AgencyUser
+    span
+      font-size 14px

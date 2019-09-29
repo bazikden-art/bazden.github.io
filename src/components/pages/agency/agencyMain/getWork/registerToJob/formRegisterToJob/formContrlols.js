@@ -1,7 +1,8 @@
-import TextField from "@material-ui/core/TextField";
-import React from "react";
-import InputMask from "react-input-mask";
-import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField"
+import React from "react"
+import InputMask from "react-input-mask"
+import Button from "@material-ui/core/Button"
+
 
 
 const Input = (props) => {
@@ -89,33 +90,41 @@ const currencies = [
     }
 ];
 
+const errorStyle = {
+    color:'red'
+}
 
 export const userName = ({input, meta: {touched, error}}) => {
-    console.log(touched,error)
+
+    const validate = touched && error
     return (
         <>
             <TextField
                 id="outlined-with-placeholder"
-                label="Name"
+                label={validate? error :"Name"}
+                error={validate && true}
                 name='name'
-                placeholder="Your Name"
-                className={'registerToJobUserName'}
+                placeholder={"Your Name"}
+                className={`registerToJobUserName ${touched && error && 'error'}`}
                 margin="normal"
                 variant="outlined"
-                inputRef= {{ref : this.name}}
+
+
                 {...input}
             />
-            {touched && error && <span>{error}</span>}
+
         </>
     )
 }
 
 export const userEmail = ({input, meta: {touched, error}}) => {
+    const validate = touched && error
     return (
         <>
             <TextField
                 id="outlined-email-input"
-                label="Email"
+                label={validate? error:"Email"}
+                error={validate && true}
                 placeholder='Your Email'
                 className={'registerToJobUserEmail'}
                 type="email"
@@ -125,33 +134,38 @@ export const userEmail = ({input, meta: {touched, error}}) => {
                 variant="outlined"
                 {...input}
             />
-            {touched && error && <span>{error}</span>}
+
 
         </>
     )
 }
 
-export const userPhone = ({input, meta: {touched, error}}) => {
+export const userPhone = ({input, meta}) => {
 
+            const validate = meta.touch && meta.error
+    console.log(meta)
     return (
         <>
             <TextField
                 id="outlined-name"
-                label="Phone"
+                label={validate? meta.error:"Phone"}
+                error={validate && true}
                 className={'registerToJobUserPhone'}
                 InputProps={{
                     inputComponent: Input,
                 }}
                 margin="normal"
                 variant="outlined"
+
                 {...input}
             />
-            {touched && error && <span>{error}</span>}
+
         </>
     )
 }
 
-export const userPosition = ({input, meta: {touched, error}}) => {
+export const userPosition = (props) => {
+
 
     return (<>
             <TextField
@@ -165,13 +179,19 @@ export const userPosition = ({input, meta: {touched, error}}) => {
                 }}
                 margin="normal"
                 variant="outlined"
-                {...input}
+                {...props.input}
             >
-                {currencies.map(option => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
+                    <option value='' disabled>...select position</option>
+                    {
+
+                        props && props.positions && props.positions.map(option => (
+                        <option key={option.id} value={option.name}>
+                            {option.name}
+                        </option>
+                    ))}
+
+
+
 
             </TextField>
         </>
@@ -191,6 +211,11 @@ export const userImage = ({input, meta: {touched, error}}) => {
                 InputProps={{
                     inputComponent: InputFile,
                     inputProps: {...input}
+                }}
+                inputProps={{
+                    style: {
+                        zIndex: 10
+                    }
                 }}
                 helperText="File format jpg  up to 5 MB, the minimum size of 70x70px"
                 {...input}

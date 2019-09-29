@@ -2,7 +2,7 @@ import React from 'react'
 import Assignment from "./assignment/assignment";
 import GetQuainted from "./getQuainted/getQuainted";
 import Requirements from "./requirements/requirements";
-import GetWork from "./getWork/getWork";
+import GetWorkContainer from "./getWork/getWorkContainer";
 
 function AgencyMain() {
     return (
@@ -10,7 +10,7 @@ function AgencyMain() {
             <Assignment/>
             <GetQuainted/>
             <Requirements/>
-            <GetWork/>
+            <GetWorkContainer/>
         </div>
     )
 }

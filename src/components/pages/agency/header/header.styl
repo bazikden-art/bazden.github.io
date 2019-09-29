@@ -5,13 +5,14 @@
   width 100%
   background #ffffff
   border-bottom 1px solid black
+  align-items center
   .agency-header
     max-width 1140px
     height 100%
     display flex
     justify-content space-between
     align-items center
-    margin 0 auto
+    margin 10px auto 0
     background #ffffff
     z-index 90
 
@@ -21,14 +22,13 @@
 
     .AgencyHeaderMenuLogin
       flex-basis 80%
+      align-items center
       display flex
       justify-content space-between
       .agency-header-menu
         .agency-header-menu-item
           padding 0 15px
           text-decoration none
-          width: 65px
-
           font-family: 'Source Sans Pro',sans-serif
           font-size: 16px
           color: #000000
@@ -40,8 +40,8 @@
         display flex
         .agency-user-info
           .agency-user-name
-            float right important
-            width: 57px
+            text-align right
+
             font-family: 'Source Sans Pro',sans-serif
             font-size: 14px
             font-weight bold
@@ -84,6 +84,7 @@
         flex-direction column-reverse
         justify-content flex-end
         position absolute
+        align-items flex-start
         top 63px
         background #f2f2f2
         overflow hidden
@@ -96,8 +97,9 @@
           display flex
           flex-direction column
           justify-content center
+
           .agency-header-menu-item
-            width 300px
+            max-width  100%
             margin 20px 100px 20px 0
 
         .agency-login
@@ -105,16 +107,16 @@
           padding-bottom 20px
           border-bottom 1px solid black
           margin 20px 15px 0 15px
+          align-self flex-start
           .agency-login-icons
             .agency-user-icon
               margin 0
 
 
           .agency-user-info
-            align-items center
+
             .agency-user-name
-              float none important
-              //margin 0 auto
+              text-align left
               margin-bottom 5px
 
           img
@@ -124,14 +126,15 @@
 
 
       .AgencyHeaderMenuLogin.showed
-        max-width 30%
+        max-width 70%
         transition 0.5s
 
       .AgencyHeaderMenuIcon
         display block
-@media (max-width: 425px)
-  .AgencyHeaderLayout
-    .agency-header
-      .AgencyHeaderMenuLogin.showed
-        max-width 50%
-        transition 0.5s
+
+//@media (max-width: 425px)
+//  .AgencyHeaderLayout
+//    .agency-header
+//      .AgencyHeaderMenuLogin.showed
+//        max-width 50%
+//        transition 0.5s

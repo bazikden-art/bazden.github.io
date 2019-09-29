@@ -6,9 +6,8 @@ function submit(values) {
 
 
     if (!values.name) {
-        //debugger
-        throw new SubmissionError({
-            username: 'Enter Name',
+         throw new SubmissionError({
+            name: 'Enter your Name',
             _error: 'Login failed!'
         })
     }

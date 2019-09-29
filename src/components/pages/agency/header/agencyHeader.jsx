@@ -5,7 +5,7 @@ import signOut from '../images/icons/sign-out.svg'
 import AgencyHeaderMenu from "./agencyHeaderMenu/agencyHeaderMenu";
 import menuIcon from '../images/icons/line-menu.svg'
 
-export const AgencyHeader = () => {
+export const AgencyHeader = ({user}) => {
     const [isOpen, setIsOpen] = useState(false)
     const onMenuToggle = () => {
 
@@ -22,14 +22,14 @@ export const AgencyHeader = () => {
                 <div className='agency-login'>
                     <div className='agency-user-info'>
                         <div className='agency-user-name'>
-                            Superstar
+                            {user ? user.name :'Superstar'}
                         </div>
                         <div className='agency-user-email'>
-                            Superstar@gmail.com
+                            {user ? user.email :"Superstar@gmail.com"}
                         </div>
                     </div>
                     <div className='agency-login-icons'>
-                        <img className='agency-user-icon' src={userIcon} alt=""/>
+                        <img className='agency-user-icon' src={user ?user.photo:userIcon} alt=""/>
                         <img className='agency-sign-out' src={signOut} alt=""/>
                     </div>
                 </div>
