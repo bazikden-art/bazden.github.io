@@ -5,11 +5,8 @@ import menu from './hamburger-menu-icon-transparent-16.jpg'
 export const Header = (props) =>{
     const [isOpen,setIsOpen] = useState(false)
 
-
-
     const onMenuToggle = () =>{
         setIsOpen(!isOpen)
-        console.log(isOpen)
     }
 
     return(
@@ -23,7 +20,7 @@ export const Header = (props) =>{
                     <NavLink to='/social'>Social Network</NavLink>
                     <NavLink to='/landing'>Landing Page</NavLink>
                     <NavLink to='/video'>Video</NavLink>
-                    <NavLink to='/agency'>abz.agency</NavLink>
+                    <NavLink to='/agency/main'>abz.agency</NavLink>
 
 
                 </div>

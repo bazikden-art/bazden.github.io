@@ -10,9 +10,9 @@ class AgencyHeaderContainer extends Component {
 
     render() {
         return (
-            <div>
+
                 <AgencyHeader {...this.props}/>
-            </div>
+
         );
     }
 }

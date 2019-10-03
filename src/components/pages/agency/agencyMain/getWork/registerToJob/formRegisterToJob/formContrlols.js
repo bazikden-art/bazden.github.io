@@ -4,12 +4,14 @@ import InputMask from "react-input-mask"
 import Button from "@material-ui/core/Button"
 
 
-
 const Input = (props) => {
     return (
         <InputMask className={props.className} maskChar={'-'} mask="+38 ( 099 \) 999 99 99" value={props.value}
-                   onChange={props.onChange}>
-            {(props) => <input    {...props} type="tel"/>}
+                   onChange={props.onChange} >
+            {(props) =>{
+                return<input type='tel'{...props} />
+                }
+            }
         </InputMask>
     )
 }
@@ -58,41 +60,38 @@ const InputFile = (props) => {
 }
 
 
-const currencies = [
-    {
-        value: '',
-        label: '... Select your position',
-    },
-    {
-        value: 'backend-developer',
-        label: 'Backend developer',
-    },
-    {
-        value: 'frontend-developer',
-        label: 'Frontend developer',
-    },
-    {
-        value: 'qa',
-        label: 'QA',
-    },
+// const currencies = [
+//     {
+//         value: '',
+//         label: '... Select your position',
+//     },
+//     {
+//         value: 'backend-developer',
+//         label: 'Backend developer',
+//     },
+//     {
+//         value: 'frontend-developer',
+//         label: 'Frontend developer',
+//     },
+//     {
+//         value: 'qa',
+//         label: 'QA',
+//     },
+//
+//     {
+//         value: 'lead-designer',
+//         label: 'Lead designer',
+//     },
+//     {
+//         value: 'ControlDepartment',
+//         label: 'Leading specialist of the Control Department',
+//     },
+//     {
+//         value: 'contextual-advertising-specialist',
+//         label: 'The contextual advertising specialist',
+//     }
+// ]
 
-    {
-        value: 'lead-designer',
-        label: 'Lead designer',
-    },
-    {
-        value: 'ControlDepartment',
-        label: 'Leading specialist of the Control Department',
-    },
-    {
-        value: 'contextual-advertising-specialist',
-        label: 'The contextual advertising specialist',
-    }
-];
-
-const errorStyle = {
-    color:'red'
-}
 
 export const userName = ({input, meta: {touched, error}}) => {
 
@@ -101,7 +100,7 @@ export const userName = ({input, meta: {touched, error}}) => {
         <>
             <TextField
                 id="outlined-with-placeholder"
-                label={validate? error :"Name"}
+                label={validate ? error : "Name"}
                 error={validate && true}
                 name='name'
                 placeholder={"Your Name"}
@@ -123,7 +122,7 @@ export const userEmail = ({input, meta: {touched, error}}) => {
         <>
             <TextField
                 id="outlined-email-input"
-                label={validate? error:"Email"}
+                label={validate ? error : "Email"}
                 error={validate && true}
                 placeholder='Your Email'
                 className={'registerToJobUserEmail'}
@@ -132,6 +131,8 @@ export const userEmail = ({input, meta: {touched, error}}) => {
                 autoComplete="email"
                 margin="normal"
                 variant="outlined"
+
+
                 {...input}
             />
 
@@ -140,24 +141,28 @@ export const userEmail = ({input, meta: {touched, error}}) => {
     )
 }
 
-export const userPhone = ({input, meta}) => {
+export const userPhone = ({input, meta: {touched, error}}) => {
 
-            const validate = meta.touch && meta.error
-    console.log(meta)
+    const validate = touched && error
+
     return (
         <>
             <TextField
                 id="outlined-name"
-                label={validate? meta.error:"Phone"}
+                label={validate ? error : "Phone"}
                 error={validate && true}
                 className={'registerToJobUserPhone'}
                 InputProps={{
                     inputComponent: Input,
                 }}
+
+                name = "phone"
                 margin="normal"
                 variant="outlined"
 
+
                 {...input}
+
             />
 
         </>
@@ -181,16 +186,14 @@ export const userPosition = (props) => {
                 variant="outlined"
                 {...props.input}
             >
-                    <option value='' disabled>...select position</option>
-                    {
+                <option value='' disabled>...select position</option>
+                {
 
-                        props && props.positions && props.positions.map(option => (
-                        <option key={option.id} value={option.name}>
+                    props && props.positions && props.positions.map(option => (
+                        <option key={option.id} value={option.id}>
                             {option.name}
                         </option>
                     ))}
-
-
 
 
             </TextField>
@@ -213,14 +216,12 @@ export const userImage = ({input, meta: {touched, error}}) => {
                     inputProps: {...input}
                 }}
                 inputProps={{
-                    style: {
-                        zIndex: 10
-                    }
+
                 }}
                 helperText="File format jpg  up to 5 MB, the minimum size of 70x70px"
                 {...input}
             />
-            {touched && error && <span>{error}</span>}
+
         </>
     )
 }

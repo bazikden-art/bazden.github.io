@@ -2,8 +2,6 @@ import {SubmissionError} from 'redux-form'
 
 
 function submit(values) {
-    console.log(values)
-
 
     if (!values.name) {
          throw new SubmissionError({

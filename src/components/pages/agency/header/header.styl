@@ -6,17 +6,19 @@
   background #ffffff
   border-bottom 1px solid black
   align-items center
+  z-index 90
   .agency-header
     max-width 1140px
     height 100%
     display flex
     justify-content space-between
     align-items center
-    margin 10px auto 0
+    margin 0 auto
     background #ffffff
-    z-index 90
+    //z-index 1000
 
     img
+      margin-left 10px
       width 134px
       height 24px
 
@@ -24,8 +26,9 @@
       flex-basis 80%
       align-items center
       display flex
-      justify-content space-between
+      justify-content space-around
       .agency-header-menu
+        display flex
         .agency-header-menu-item
           padding 0 15px
           text-decoration none

@@ -6,7 +6,7 @@ import GetWorkContainer from "./getWork/getWorkContainer";
 
 function AgencyMain() {
     return (
-        <div>
+        <div className='agency-layout'>
             <Assignment/>
             <GetQuainted/>
             <Requirements/>

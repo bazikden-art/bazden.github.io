@@ -24,6 +24,7 @@ export const AgencyUser = ({name,email,photo,position,phone}) => {
                 </div>
             </div>
 
+
         </div>
     )
 }

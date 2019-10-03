@@ -1,15 +1,19 @@
 .AgencyUsersBlock
-  //max-width 960px
-  margin 20px auto
+  margin 20px auto 100px
+  .AgencyUsersPageBtns
+    margin 0 auto
+    display flex
+    justify-content center
+    .AgencyUsersPageBtn
+      width 50px
+      margin 0 5px
 
   .AgencyUsers
     //margin 0 auto
     display flex
     flex-wrap wrap
     justify-content center
-    //grid-template-columns repeat(auto-fill,minmax(200px,300px))
-    //justify-items   center
-    // grid-gap 10px
+
 
 
     .AgencyUser
@@ -17,9 +21,7 @@
       border 2px solid grey
       border-radius 10px
       margin 10px
-      //&:last-child
-      //grid-column-start 2
-      //grid-column-end 3
+
 
       .AgencyUsersIcon
         width 100px
@@ -32,6 +34,19 @@
 
       .AgencyUsersInfo
         margin 10px
+
+
+  .AgencyUsersBtn
+    display block
+    margin 20px auto 0
+    width 200px
+    height 30px
+    background #007bff
+    outline none
+    border-radius 5px
+    border none
+    color #f1f2f2
+    font-weight 700
 
 @media (max-width: 425px)
   .AgencyUser

@@ -4,6 +4,7 @@ const IMG_FILE_NAME= "IMG_FILE_NAME"
 const ADD_USERS = "ADD_USERS"
 const GET_USER = "GET_USER"
 const GET_POSITIONS ="GET_POSITIONS"
+const ADD_USER = "ADD_USER"
 
 let initialState = {}
 
@@ -13,7 +14,9 @@ export const agencyReducer = (state = initialState,action) =>{
         case ADD_USERS:
             return{
                 ...state,
-                users:action.users
+                users:action.users.users,
+                totalCount:action.users.total_users,
+                count:action.users.count
             }
 
         case GET_USER:
@@ -47,13 +50,15 @@ export const addAgencyUser = (user) => ({type:GET_USER,user})
 
 export const addAgencyPositions = (positions) =>({type:GET_POSITIONS,positions})
 
+export const addUser = (user) =>({type:ADD_USER,user})
+
 export const getAgencyUsers =  (page,count) => async dispatch =>{
     const res =  await agencyAPI.getUsers(page,count)
-    dispatch(addAgencyUsers(res.data.users))
+    dispatch(addAgencyUsers(res.data))
 }
 
-export const getAgencyUser = () => async dispatch =>{
-    const res = await agencyAPI.getUser()
+export const getAgencyUser = (id) => async dispatch =>{
+    const res = await agencyAPI.getUser(id)
     dispatch(addAgencyUser(res.data.user))
 }
 
@@ -61,4 +66,19 @@ export const  getAgencyPositions = () => async dispatch =>{
 
     const res = await agencyAPI.getPositions()
     dispatch(addAgencyPositions(res.data))
+}
+
+export const addNewUser=(formData)=>dispatch=>{
+
+    agencyAPI.getToken()
+        .then(res =>{
+            res.status && res.data.success &&
+                agencyAPI.addNewUser(formData,res.data.token)
+                    .then(res=> {
+                        console.log(res)
+                        dispatch(getAgencyUsers())
+                        dispatch(getAgencyUser(res.data.user_id))
+                    })
+
+        } )
 }

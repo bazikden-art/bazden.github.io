@@ -31,7 +31,7 @@ const items =[
 
 function GetQuaintedSecondBlock() {
     return (
-        <div className='getQuaintedSecondBlock'>
+        <div id='agencyRelationships' className='getQuaintedSecondBlock'>
             <h2 className='getQuaintedSecondBlockH2'>About my relationships with web-development</h2>
 
             <div className='getQuaintedSecondBlockItems'>

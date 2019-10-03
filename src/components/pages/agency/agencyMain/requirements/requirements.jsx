@@ -3,7 +3,7 @@ import img from '../../images/imgs/man-laptop-v1.svg'
 
 function Requirements() {
     return (
-        <div className='requirements'>
+        <div id='agencyRequirements' className='requirements'>
             <h2 className='requirementsHeader'>General requirements for the test task</h2>
             <div className='requirementsBlock'>
                 <div className='requirementsTextBlock'>

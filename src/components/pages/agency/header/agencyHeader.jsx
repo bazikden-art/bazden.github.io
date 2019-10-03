@@ -8,16 +8,17 @@ import menuIcon from '../images/icons/line-menu.svg'
 export const AgencyHeader = ({user}) => {
     const [isOpen, setIsOpen] = useState(false)
     const onMenuToggle = () => {
-
         setIsOpen(!isOpen)
-        console.log('state',isOpen)
+    }
+    const onMouseLeave = () =>{
+        setIsOpen(false)
     }
 
 
     return (
-        <div className='agency-header'>
+        <div className='agency-header' onMouseOut={onMouseLeave} >
             <img src={logo} alt=""/>
-            <div className={`AgencyHeaderMenuLogin ${isOpen?' showed':''}`}>
+            <div  className={`AgencyHeaderMenuLogin ${isOpen?' showed':''}`}>
                 <AgencyHeaderMenu/>
                 <div className='agency-login'>
                     <div className='agency-user-info'>

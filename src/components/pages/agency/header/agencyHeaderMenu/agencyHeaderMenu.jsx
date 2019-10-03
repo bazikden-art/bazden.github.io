@@ -1,14 +1,36 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {NavLink} from "react-router-dom";
 
-function AgencyHeaderMenu() {
+const AgencyHeaderMenu = () => {
+    const [state,setState] = useState({mainPage:true,id:null})
+
+    useEffect(()=>{
+        state.mainPage && onAgencyAboutClick(state.id)
+    },[state.mainPage])
+
+    const onAgencyAboutClick = (id) => {
+
+        setState({...state,id:id,mainPage:true})
+        let elem = document.getElementById(id)
+        if (elem) {
+            window.scroll(0, 0)
+            let coords = elem.getBoundingClientRect()
+            window.scroll(coords.x, coords.y - 174)
+        }
+
+    }
+
     return (
         <menu className='agency-header-menu'>
-            <NavLink className='agency-header-menu-item' to='/agency/aboutMe'>About me </NavLink>
-            <NavLink className='agency-header-menu-item' to='/agency/relationships'>Relationships </NavLink>
-            <NavLink className='agency-header-menu-item' to='/agency/requirements'>Requirements  </NavLink>
-            <NavLink className='agency-header-menu-item' to='/agency/users'>Users  </NavLink>
-            <NavLink className='agency-header-menu-item' to='/agency/signUp'>Sign Up</NavLink>
+            <NavLink onClick={() => onAgencyAboutClick('agencyAbout')} className='agency-header-menu-item'
+                     to='/agency/main/about'>About me </NavLink>
+            <NavLink onClick={() => onAgencyAboutClick('agencyRelationships')} className='agency-header-menu-item'
+                     to='/agency/main/relationships'>Relationships </NavLink>
+            <NavLink onClick={() => onAgencyAboutClick('agencyRequirements')} className='agency-header-menu-item'
+                     to='/agency/main/requirements'>Requirements </NavLink>
+            <NavLink onClick={()=>setState({...state,mainPage:false})} className='agency-header-menu-item' to='/agency/users'>Users </NavLink>
+            <NavLink onClick={() => onAgencyAboutClick('agencySignUp')} className='agency-header-menu-item'
+                     to='/agency/main/signUp'>Sign Up</NavLink>
         </menu>
     );
 }

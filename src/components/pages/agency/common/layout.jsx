@@ -2,7 +2,9 @@ import React from 'react'
 
 const style = {
     maxWidth:'1140px',
-    margin:'63px auto 0'
+    margin:'0 auto',
+    position:'relative',
+    top:'64px'
 }
 
 export  const LayOut = (props)=>{

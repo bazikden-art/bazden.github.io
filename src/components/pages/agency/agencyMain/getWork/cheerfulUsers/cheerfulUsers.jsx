@@ -50,7 +50,7 @@ import CheerfulUser from "./cheerfulUser/cheerfulUser"
 // ]
 
 const CheerfulUsers = ({users}) =>{
-        return (
+         return (
             <div className='cheerfulUsers'>
                 <h2>Our cheerful users</h2>
                 <h4>Attention! Sorting users by registration date</h4>

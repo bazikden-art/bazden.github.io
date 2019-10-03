@@ -1,10 +1,10 @@
 export const validate = values => {
-    console.log(values)
+
     const errors = {}
     !values.name && (errors.name = 'Required Name')
     !values.email && (errors.email = 'Required Email')
-    !values.phone && (errors.phone = 'Required Phone')
-    //values.phone  && !phoneCheck(values.phone) &&(errors.phone = 'Incorrect Number')
+    // !values.phone && (errors.phone = 'Required Phone')
+    // values.phone  && !phoneCheck(values.phone) &&(errors.phone = 'Incorrect Number')
     return errors
 }
 
