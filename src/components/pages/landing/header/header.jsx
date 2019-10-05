@@ -15,7 +15,7 @@ export const Header = () => {
                     <NavLink to={'/landing/coffeepage'}>Our coffee</NavLink>
                 </li>
                 <li className="header__item">
-                    <NavLink to={'/landing/itempage'}>For your pleasure</NavLink>
+                    <NavLink to={'/landing/pleasure'}>For your pleasure</NavLink>
                 </li>
             </ul>
         </header>

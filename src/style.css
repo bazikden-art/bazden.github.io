@@ -520,7 +520,7 @@ body {
   flex-wrap: wrap;
 }
 .best__item {
-  width: 220px;
+  width: 225px;
   min-height: 240px;
   margin: 0 auto;
   margin-top: 40px;
@@ -543,26 +543,31 @@ body {
 }
 footer {
   padding: 20px 0;
-}
-footer .row .footer {
+  margin: 0 auto;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+footer .row-footer .footer {
+  display: flex;
+  justify-content: center;
   align-items: flex-end;
-  margin-top: 30px;
+  margin: 30px auto 0;
   list-style-type: none;
 }
-footer .row .footer__item {
+footer .row-footer .footer__item {
   font-size: 12px;
-  margin-right: 40px;
+  margin-right: 10px;
   font-weight: normal;
 }
-footer .row .footer__item a {
+footer .row-footer .footer__item a {
   color: #000;
 }
-footer .row .footer__item a:visited {
+footer .row-footer .footer__item a:visited {
   text-decoration: none;
   color: #000;
 }
-footer .row .footer__item a:hover {
+footer .row-footer .footer__item a:hover {
   text-decoration: none;
   color: #000;
 }
@@ -582,6 +587,22 @@ footer .footer__logo {
 .shop {
   padding: 70px 0 40px 0;
 }
+.shop .container {
+  padding: 0;
+  margin: 0 auto;
+  padding: 0;
+}
+.shop .container .row-about {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.shop .container .beanslogo {
+  margin: 20px auto;
+}
+.shop .container .search__coffee-bar {
+  justify-content: center;
+}
 .shop .title {
   margin-top: 10px;
 }
@@ -594,10 +615,18 @@ footer .footer__logo {
   font-size: 14px;
   text-align: center;
 }
+.shop__search {
+  margin: 5px 0;
+  min-width: 310px;
+  display: flex;
+  justify-content: center;
+}
 .shop__search-label {
   margin-right: 20px;
+  display: block;
 }
 .shop__search-input {
+  display: block;
   width: 180px;
   height: 30px;
   box-shadow: 4px 4px 20px rgba(0,0,0,0.25);
@@ -610,11 +639,13 @@ footer .footer__logo {
   text-align: center;
 }
 .shop__filter {
+  margin: 5px 0;
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
 }
 .shop__filter-label {
+  display: block;
   margin-right: 35px;
 }
 .shop__filter-btn {
@@ -639,9 +670,10 @@ footer .footer__logo {
 .shop__wrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .shop__item {
-  width: 220px;
+  width: 225px;
   min-height: 240px;
   margin: 60px 40px 0 40px;
   padding: 22px 24px;
@@ -679,6 +711,63 @@ footer .footer__logo {
 }
 .shop__point:first-child {
   margin-top: 26px;
+}
+@media (max-width: 768px) {
+  .shop {
+    padding: 70px 0 0;
+  }
+  .shop__girl {
+    padding: 0;
+    margin: 0 auto;
+  }
+  .shop__text {
+    margin: 25px 5px 0;
+  }
+  .shop__search {
+    padding: 0;
+  }
+  .shop__filter-label {
+    margin-right: 20px;
+  }
+  .shop__item {
+    margin: 60px auto 0;
+  }
+}
+@media (max-width: 320px) {
+  .container {
+    padding: 0;
+  }
+  .container .shop__girl {
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+  .container .shop__girl {
+    width: 400px;
+    height: 400px;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+@media (max-width: 425px) {
+  .container {
+    padding: 0;
+  }
+  .container .shop__girl {
+    width: 250px;
+    height: 250px;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 .login-elem {
   margin: 20px;
@@ -1290,6 +1379,11 @@ textarea {
   font-weight: bold;
   outline: none;
 }
+@media (max-width: 1024px) {
+  .cheerfulUsers .cheerfulUsersBlock {
+    padding-left: 30px;
+  }
+}
 @media (max-width: 768px) {
   .cheerfulUsers {
     padding: 70px 0;
@@ -1313,6 +1407,7 @@ textarea {
     max-width: 158px;
   }
   .cheerfulUsers .cheerfulUsersBlock {
+    padding: 0;
     grid-auto-rows: 1fr;
     color: #8dc63f;
   }
@@ -1351,46 +1446,155 @@ textarea {
 }
 .registerToJob .formRegisterToJob {
   z-index: 10;
-  margin: 63px 0;
+  margin: 63px 24px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
-.registerToJob .formRegisterToJob .error {
+.registerToJob .formRegisterToJob .formRegisterToJobName,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone {
+  flex-basis: 30%;
+  margin-bottom: 20px;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobName .formRegisterToJobError,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail .formRegisterToJobError,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone .formRegisterToJobError {
+  padding-left: 5px;
+  font-size: 14px;
+  font-family: "Roboto";
   color: #f00;
 }
-.registerToJob .formRegisterToJob .registerToJobUserName,
-.registerToJob .formRegisterToJob .registerToJobUserEmail,
-.registerToJob .formRegisterToJob .registerToJobUserPhone {
-  width: 31%;
+.registerToJob .formRegisterToJob .formRegisterToJobName .formRegisterToJobNameInput,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail .formRegisterToJobNameInput,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone .formRegisterToJobNameInput,
+.registerToJob .formRegisterToJob .formRegisterToJobName .formRegisterToJobEmailInput,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail .formRegisterToJobEmailInput,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone .formRegisterToJobEmailInput,
+.registerToJob .formRegisterToJob .formRegisterToJobName .formRegisterToJobPhoneInput,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail .formRegisterToJobPhoneInput,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone .formRegisterToJobPhoneInput {
+  border: 1px solid #b7b7b7;
+  height: 56px;
+  border-radius: 5px;
+  padding: 15px;
+  position: relative;
 }
-.registerToJob .formRegisterToJob .select-position {
-  flex-basis: 48%;
+.registerToJob .formRegisterToJob .formRegisterToJobName .formRegisterToJobNameInput input,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail .formRegisterToJobNameInput input,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone .formRegisterToJobNameInput input,
+.registerToJob .formRegisterToJob .formRegisterToJobName .formRegisterToJobEmailInput input,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail .formRegisterToJobEmailInput input,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone .formRegisterToJobEmailInput input,
+.registerToJob .formRegisterToJob .formRegisterToJobName .formRegisterToJobPhoneInput input,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail .formRegisterToJobPhoneInput input,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone .formRegisterToJobPhoneInput input {
+  z-index: 10;
+  background: transparent;
+  border: none;
+  background: #fff;
 }
-.registerToJob .formRegisterToJob .update-photo {
-  flex-basis: 48%;
-}
-.registerToJob .formRegisterToJob .update-photo .photoToJob {
+.registerToJob .formRegisterToJob .formRegisterToJobName .formRegisterToJobNameInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail .formRegisterToJobNameInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone .formRegisterToJobNameInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobName .formRegisterToJobEmailInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail .formRegisterToJobEmailInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone .formRegisterToJobEmailInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobName .formRegisterToJobPhoneInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobEmail .formRegisterToJobPhoneInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobPhone .formRegisterToJobPhoneInput div {
   position: absolute;
-  margin: 0;
-  padding: 0;
+  background: #fff;
+  top: 15px;
+  z-index: 15;
+  transition: 2;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobPosition,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto {
+  flex-basis: 48%;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPositionInput,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPositionInput,
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPhotoInput,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPhotoInput {
+  height: 56px;
+  border: 1px solid #b7b7b7;
+  border-radius: 5px;
+  padding: 15px;
+  position: relative;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPositionInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPositionInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPhotoInput div,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPhotoInput div {
+  position: absolute;
+  top: -12px;
+  background: #fff;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPositionInput select,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPositionInput select,
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPhotoInput select,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPhotoInput select {
+  border: none;
+  width: 100%;
+  background: none;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile {
+  top: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile div,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile div {
+  position: relative;
+  top: 0;
+  height: 100%;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile .formRegisterToJobPhotoInputFileBtn,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile .formRegisterToJobPhotoInputFileBtn {
+  position: absolute;
+  right: -16px;
+  top: -16px;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile .formRegisterToJobPhotoInputFileBtn #raised-button-file,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile .formRegisterToJobPhotoInputFileBtn #raised-button-file {
   width: 130px;
   height: 56px;
-  border: solid 2px #ef6c00;
-  color: #ef6c00;
-  top: 0;
-  right: 0;
-  border-radius: 0 4px 4px 0;
-  background: none;
-  z-index: 1;
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
 }
-.registerToJob .formRegisterToJob .update-photo .photoToJob:hover {
-  background: #ef6c00;
-  color: #f1f2f2;
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile .formRegisterToJobPhotoInputFileBtn #raised-button-file input,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile .formRegisterToJobPhotoInputFileBtn #raised-button-file input {
+  height: 56px;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile .formRegisterToJobPhotoInputFileBtn button,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobPhotoInput .formRegisterToJobPhotoInputFile .formRegisterToJobPhotoInputFileBtn button {
+  position: relative;
+  width: 130px;
+  height: 56px;
+  border-radius: 0 5px 5px 0;
+  border: 2px solid #ef6c00;
+  background: #fff;
+  color: #ef6c00;
+  z-index: 1;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro';
+  font-weight: 600;
+  font-size: 20px;
+}
+.registerToJob .formRegisterToJob .formRegisterToJobPosition .formRegisterToJobError,
+.registerToJob .formRegisterToJob .formRegisterToJobPhoto .formRegisterToJobError {
+  padding-left: 5px;
+  font-size: 14px;
+  font-family: "Roboto";
+  color: #f00;
 }
 .registerToJob .registerToJobSignUp {
   display: block;
-  margin: 0 auto 149px;
+  margin: 30px auto 149px;
   border: none;
   width: 290px;
   height: 40px;
@@ -1402,6 +1606,34 @@ textarea {
   font-weight: bold;
   color: #8d8c8c;
   outline: none;
+}
+.registerToJob .formRegisterToJobResult {
+  position: fixed;
+  top: 174px;
+  max-width: 93%;
+  height: 100vh;
+  background: transparent;
+  padding: 150px;
+  z-index: 14;
+}
+.registerToJob .formRegisterToJobResult .formRegisterToJobResultLayer {
+  padding: 20px;
+  width: 300px;
+  height: 200px;
+  border: 3px solid #b7b7b7;
+  position: relative;
+  z-index: 15;
+  background: #fff;
+  border-radius: 10px;
+}
+.registerToJob .formRegisterToJobResult .formRegisterToJobResultLayer .formRegisterToJobResultOK {
+  background: #fff;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  font-weight: bold;
+  width: 30px;
+  text-align: center;
 }
 @media (max-width: 1024px) {
   .registerToJob {
@@ -1429,11 +1661,24 @@ textarea {
   .registerToJob .formRegisterToJob {
     display: flex;
     flex-direction: column;
+    margin: 2px;
   }
   .registerToJob .formRegisterToJob .registerToJobUserName,
   .registerToJob .formRegisterToJob .registerToJobUserEmail,
   .registerToJob .formRegisterToJob .registerToJobUserPhone {
     width: 100%;
+  }
+  .registerToJob .formRegisterToJob .formRegisterToJobPosition,
+  .registerToJob .formRegisterToJob .formRegisterToJobPhoto {
+    margin: 10px 0;
+  }
+  .registerToJob .formRegisterToJobResult {
+    padding: 50px 50px 0;
+  }
+}
+@media (max-width: 320px) {
+  .registerToJob .formRegisterToJobResult {
+    padding: 50px 0 0;
   }
 }
 .AgencyUsersBlock {
@@ -1507,6 +1752,17 @@ textarea {
 }
 .agencyFooter .agencyFooterLayout .agencyFooterHeader {
   grid-area: header;
+}
+.agencyFooter .agencyFooterLayout .agencyFooterHeader .agency-header-menu {
+  display: flex;
+}
+.agencyFooter .agencyFooterLayout .agencyFooterHeader .agency-header-menu .agency-header-menu-item {
+  padding: 0 15px;
+  text-decoration: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
 }
 .agencyFooter .agencyFooterLayout .first {
   margin: 30px 0 37px;
@@ -1592,9 +1848,16 @@ textarea {
     grid-template-rows: 1.5fr 1fr 100px;
   }
   .agencyFooter .agencyFooterLayout .agencyFooterHeader {
+    display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    max-height: 400px;
+  }
+  .agencyFooter .agencyFooterLayout .agencyFooterHeader .agency-header-menu {
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
   .agencyFooter .agencyFooterLayout .agencyFooterHeader .agencyFooterHeaderMenu {
     display: flex;

@@ -2,23 +2,26 @@ import React from 'react';
 import FormRegisterToJob from "./formRegisterToJob/formRegisterToJob";
 import {connect} from "react-redux";
 import {addFormData, addNewUser} from "../../../../../../redux/reducers/agencyReducer";
-import {reset as resetForm} from 'redux-form';
+
 
 const RegisterToJob = ({addFormData,resetForm,positions,addNewUser}) => {
 
-    const onFormSubmit =(data)=>{
-        let formData = new FormData()
+    const onFormSubmit =  (data)=>{
+            console.log(data)
+            let formData = new FormData()
 
-        const  phone = data.phone.replace(/[-()\s]/g, '')
-        formData.append('name',data.name)
-        formData.append('email',data.email)
-        formData.append('phone',phone)
-        formData.append('position_id',data.position_id)
-        formData.append('photo',data.photo)
+            const  phone =   data.phone && data.phone.replace(/[-()\s]/g, '')
+            formData.append('name',data.name)
+            formData.append('email',data.email)
+            formData.append('phone',phone)
+            formData.append('position_id',data.position_id)
+            formData.append('photo',data.photo)
 
-        addFormData(formData)
-        addNewUser(formData)
-        resetForm('registerToJob')
+            addFormData(formData)
+            addNewUser(formData)
+
+
+
 
 
     }
@@ -42,4 +45,4 @@ const mapStateToProps = (state) => ({
     positions:state.agency.positions
 })
 
-export default connect(mapStateToProps,{addFormData,resetForm,addNewUser,})(RegisterToJob)
+export default connect(mapStateToProps,{addFormData,addNewUser,})(RegisterToJob)

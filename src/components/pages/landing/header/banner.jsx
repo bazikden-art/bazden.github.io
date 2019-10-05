@@ -5,7 +5,7 @@ const Banner = () => {
     return(
         <div className="banner">
             <div className="container">
-                <div className="row">
+                <div style={{margin:'30px 0 16px'}} className="row">
                     <div className="col-lg-6">
                         <Header/>
                     </div>

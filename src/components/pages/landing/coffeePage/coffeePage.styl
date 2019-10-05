@@ -6,6 +6,22 @@
     margin-top: 60px
 .shop
   padding: 70px 0 40px 0
+  .container
+    padding 0
+    margin 0 auto
+    padding 0
+
+    .row-about
+      display flex
+      justify-content center
+      flex-wrap wrap
+
+    .beanslogo
+      margin 20px auto
+    .search__coffee-bar
+      justify-content center
+      ///.shop
+
   .title
     margin-top: 10px
   &__girl
@@ -16,9 +32,15 @@
     font-size: 14px
     text-align: center
   &__search
+    margin 5px 0
+    min-width  310px
+    display flex
+    justify-content center
     &-label
       margin-right: 20px
+      display block
     &-input
+      display block
       width: 180px
       height: 30px
       box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25)
@@ -29,12 +51,16 @@
       &::placeholder
         text-align: center
   &__filter
+    margin 5px 0
     display: flex
+    justify-content center
     align-items: center
-    justify-content: space-between
+
     &-label
+      display block
       margin-right: 35px
     &-btn
+
       width: 75px
       height: 30px
       background-color: #fff
@@ -52,8 +78,9 @@
   &__wrapper
     display: flex
     flex-wrap: wrap
+    justify-content center
   &__item
-    width: 220px
+    width: 225px
     min-height: 240px
     margin: 60px 40px 0 40px
     padding: 22px 24px
@@ -83,4 +110,30 @@
     &:first-child
       margin-top: 26px
         
-            
+@media (max-width: 768px)
+  .shop
+    padding 70px 0 0
+    &__girl
+      padding 0
+      margin 0 auto
+    &__text
+      margin 25px 5px 0
+    &__search
+      padding 0
+
+    &__filter
+      &-label
+        margin-right  20px
+
+    &__item
+      margin 60px auto 0
+
+@media (max-width: 320px)
+  .container
+    padding 0
+    .shop__girl
+      width 250px
+      height 250px
+      display block
+      margin 0 auto
+      padding 0

@@ -3,10 +3,9 @@ import {NavLink} from "react-router-dom";
 
 const AgencyHeaderMenu = () => {
     const [state,setState] = useState({mainPage:true,id:null})
-
     useEffect(()=>{
         state.mainPage && onAgencyAboutClick(state.id)
-    },[state.mainPage])
+    },[state.mainPage,state.id])
 
     const onAgencyAboutClick = (id) => {
 
