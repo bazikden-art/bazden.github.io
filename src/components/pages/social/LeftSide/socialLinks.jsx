@@ -1,7 +1,7 @@
 import React from 'react'
 import {NavLink} from "react-router-dom";
 
-export const SocialLinks = () => {
+export const SocialLinks = ({logined}) => {
     return (
         <nav>
             <div className="social-links-block">
@@ -37,7 +37,7 @@ export const SocialLinks = () => {
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1rt2ziaCPLoWB1Ifh_DgAeWaPCvpOyTV-vBliT86q8RTWDqh2"
                         alt=""/>
                 </div>
-                <NavLink to='/social/music' className='social-links'>Music</NavLink>
+                <NavLink to='/social/friends' className='social-links'>Friends</NavLink>
             </div>
 
             <div className="social-links-block">
@@ -63,7 +63,7 @@ export const SocialLinks = () => {
                         src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1rt2ziaCPLoWB1Ifh_DgAeWaPCvpOyTV-vBliT86q8RTWDqh2"
                         alt=""/>
                 </div>
-                <NavLink to='/social/login' className='social-links'>Login</NavLink>
+                <NavLink to='/social/login' className='social-links'>{logined?'Log Out':'Login'}</NavLink>
             </div>
         </nav>
     )

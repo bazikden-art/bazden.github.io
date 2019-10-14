@@ -14,13 +14,12 @@ class VideoContainer extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log('update')
+
         prevState.search !== this.state.search && this.getVideo()
     }
 
 
     getVideo = async () => {
-        //console.log(this.state.search)
         const res = await Youtube('search', {params: {...params, q:this.state.search}})
         console.log(res.data.items[0].id.videoId)
             this.setState({
@@ -44,7 +43,6 @@ class VideoContainer extends Component {
 
     render() {
         let {data,chosenVideo} =this.state
-        console.log(chosenVideo)
         return(
             <>
 

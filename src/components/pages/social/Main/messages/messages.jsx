@@ -1,10 +1,19 @@
-import React from 'react'
+import React,{Component} from 'react'
+import {dialogsAPI} from "../../api/dialogsApi";
 
-const Messages = () => {
-    return(
-        <div className='messages'>
-            Messages
-        </div>
-    )
+class Messages extends Component {
+    componentDidMount() {
+        dialogsAPI.getAllDialogs()
+            .then(res =>  console.log(res))
+    }
+
+    render(){
+        return(
+            <div className='messages'>
+                Messages
+            </div>
+        )
+    }
+
 }
 export default Messages

@@ -4,6 +4,7 @@ import {Input, userImage, UserPhone, userPosition} from "./formControls";
 import {connect} from "react-redux";
 
 
+
 let FormRegisterToJob = ({handleSubmit, result, positions, filename}) => {
 
     const onBtnClick = () => {

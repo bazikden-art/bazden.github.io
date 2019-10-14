@@ -21,7 +21,6 @@ const useStyles = makeStyles({
 export default function ImgMediaCard({video,data}) {
     const classes = useStyles();
     const videoUrl ="https://www.youtube.com/embed/"
-    console.log(video)
 
     return (
         <Card className={classes.card}>
@@ -31,7 +30,7 @@ export default function ImgMediaCard({video,data}) {
                     component="iframe"
                     alt="Contemplative Reptile"
                     height="140"
-                    src={video && videoUrl+video.id.videoId}
+                    src={video ? videoUrl+video.id.videoId:""}
                     allowFullScreen={true}
                 />
                 <CardContent>
@@ -63,10 +62,10 @@ export default function ImgMediaCard({video,data}) {
 //
 // const VideoPlayer = () => {
 //     return(
-//         <div className='video-player'>
+//         <div className='aviasales-player'>
 //
 //             <div>
-//                 <iframe className='video-player-frame' title='video player' allowFullScreen={true}  src={'https://www.youtube.com/embed/AcL0MeVZIxM'}></iframe>
+//                 <iframe className='aviasales-player-frame' title='aviasales player' allowFullScreen={true}  src={'https://www.youtube.com/embed/AcL0MeVZIxM'}></iframe>
 //             </div>
 //
 //         </div>

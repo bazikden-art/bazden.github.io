@@ -2,10 +2,12 @@ import React from 'react'
 import {Field, reduxForm} from "redux-form";
 import {max, required} from "../validator";
 import {Input} from "./formControl";
+import {withRouter} from "react-router";
 
 const maxLength = max(20)
 
 const Form = (props) => {
+    console.log(props)
 
     return (
         <form onSubmit={props.handleSubmit}>
@@ -24,14 +26,15 @@ const Form = (props) => {
                 />
                 <span>remember me</span>
             </div>
-            <button>LogIn</button>
+
+            <button >LogIn</button>
 
         </form>
     )
 }
 
 
-export const LoginReduxForm = reduxForm({form: 'login'})(Form)
+export const LoginReduxForm = reduxForm({form: 'login'})(withRouter(Form))
 
 
 

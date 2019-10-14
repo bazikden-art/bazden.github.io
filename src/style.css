@@ -35,13 +35,23 @@
   justify-content: space-between;
   align-items: center;
 }
-.main-page-header .header_menu_block .loginMenu .logined {
-  width: 100px;
+.main-page-header .header_menu_block .loginMenu .loginedUser-block {
+  margin: 0 10px 0;
+}
+.main-page-header .header_menu_block .loginMenu .loginedUser-block .header-logineduser-photo img {
+  width: 50px;
+  height: 50px;
+  margin: 5px auto;
+  display: block;
+}
+.main-page-header .header_menu_block .loginMenu .loginedUser-block .logined {
+  display: block;
+  margin: 0 auto;
   text-align: center;
   text-decoration: none;
   color: #fff;
 }
-.main-page-header .header_menu_block .loginMenu .logined:hover {
+.main-page-header .header_menu_block .loginMenu .loginedUser-block .logined:hover {
   color: #27aae1;
 }
 .main-page-header .header_menu_block .loginMenu .headerMenuIcon {
@@ -91,6 +101,7 @@
     order: 0;
     position: relative;
     align-items: center;
+    margin-top: 10px;
   }
   .main-page-header .header_menu_block .loginMenu .logined {
     display: block;
@@ -109,6 +120,7 @@
 .left-side {
   flex-basis: 25%;
   height: 100%;
+  transition: 2s;
 }
 .left-side .left-side-block {
   width: 100%;
@@ -195,31 +207,82 @@
   border: 1px solid #696969;
   margin: 5px auto;
 }
+@media all and (max-width: 425px) {
+  .left-side {
+    max-width: 0;
+    max-width: 200px;
+    overflow: hidden;
+    transition: 1s;
+    background: #fff;
+    position: absolute;
+    z-index: 150;
+  }
+}
 .users .spinner img {
   width: 100%;
   height: 200px;
   display: block;
   margin: 100px auto;
 }
-.users .users-list .users-nav-btn {
+.users .users-nav-panel {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+.users .users-nav-panel-prev,
+.users .users-nav-panel-next {
+  width: 30px;
+  height: 30px;
+  margin: 0 10px;
+}
+.users .users-nav-panel-prev img,
+.users .users-nav-panel-next img {
+  width: 100%;
+  height: 100%;
+}
+.users .users-nav-panel .users-nav-btn {
   margin: 0 2px;
+  background: linear-gradient(to bottom, rgba(39,170,225,0.8), rgba(28,117,188,0.8)) no-repeat;
+  color: #fff;
+  width: 30px;
+  border: none;
+}
+.users .users-nav-panel .users-nav-btn-active {
+  width: 30px;
+  box-sizing: border-box;
+  border: 2px solid rgba(39,170,225,0.8);
+  background: #fff;
+}
+.users .users-list {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 .users .users-list .user {
+  flex-basis: 30%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.users .users-list .user-icon {
   cursor: pointer;
 }
-.users .users-list .user .user-icon img {
+.users .users-list .user-icon img {
+  display: block;
+  margin: 10px auto;
   width: 150px;
   height: 150px;
 }
-.users .users-list .user .user-icon .user-icon-btn {
+.users .users-list .user-icon-btn {
   display: block;
   margin: 0 auto;
 }
-.users .users-list .user .user-info {
+.users .users-list .user-info {
   margin: 30px 0 0 20px;
 }
-.users .users-list .user .user-info .user-name {
+.users .users-list .user-info .user-name {
   margin-bottom: 30px;
 }
 .login-page {
@@ -237,7 +300,6 @@
 }
 .main-social {
   flex-basis: 50%;
-  border: 1px solid #808080;
   height: 100%;
   z-index: 50;
 }
@@ -297,6 +359,30 @@
   font-size: 12px;
   line-height: 1.4;
 }
+.friends {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.friends-block {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.friends-block-icon {
+  text-align: center;
+}
+.friends-block-icon img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: 10px auto;
+}
+.friends-block-name {
+  text-align: center;
+  margin: 10px 0;
+}
 .post-message-container {
   display: flex;
   justify-content: space-between;
@@ -343,52 +429,65 @@
   right: 20px;
   outline: none;
 }
-.right-side-user {
+.right-side {
+  flex-basis: 25%;
+  height: 100%;
+  position: relative;
+  background: #fff;
   display: flex;
+  align-items: center;
+}
+.right-side-user-container {
+  order: 1;
+}
+.right-side-user-container h2 {
+  color: #6d6e71;
+  padding-left: 20px;
+}
+.right-side-user-container .right-side-user {
+  display: flex;
+  flex-wrap: wrap;
   margin: 20px 0 20px 20px;
   border-bottom: 1px solid #d3d3d3;
   width: 60%;
-  height: 60px;
-  position: relative;
 }
-.right-side-user .right-side-user-logo {
+.right-side-user-container .right-side-user .right-side-user-logo {
   background: #fff;
-  height: 60px;
   z-index: 2;
   position: relative;
   bottom: -1px;
 }
-.right-side-user .right-side-user-logo img {
+.right-side-user-container .right-side-user .right-side-user-logo img {
   width: 40px;
   height: 40px;
   border-radius: 20px;
   border: 1px solid #6d6e71;
   display: block;
 }
-.right-side-user .right-side-user-info {
-  height: 60px;
+.right-side-user-container .right-side-user .right-side-user-info {
   margin-left: 10px;
 }
-.right-side-user .right-side-user-info .right-side-user-name {
+.right-side-user-container .right-side-user .right-side-user-info .right-side-user-name {
   margin-bottom: 10px;
 }
-.right-side-user .right-side-user-info a {
+.right-side-user-container .right-side-user .right-side-user-info a {
   color: #8dc63f;
   text-decoration: none;
 }
-.right-side-user .right-side-user-info a a:hover {
+.right-side-user-container .right-side-user .right-side-user-info a a:hover {
   text-decoration: #8dc63f;
 }
-.right-side {
-  flex-basis: 25%;
-  height: 100%;
+@media all and (max-width: 1024px) {
+  .right-side-user {
+    justify-content: center;
+  }
 }
-.right-side h2 {
-  color: #6d6e71;
-  padding-left: 20px;
+@media all and (max-width: 768px) {
+  .right-side {
+    display: none;
+  }
 }
 .social {
-  max-width: 80%;
   border: 1px solid #808080;
   margin: 0 auto;
   margin-top: 110px;
@@ -609,6 +708,7 @@ footer .footer__logo {
 .shop__girl {
   display: block;
   margin: 0 auto;
+  max-width: 400px;
 }
 .shop__text {
   margin-top: 25px;
@@ -738,7 +838,7 @@ footer .footer__logo {
     padding: 0;
   }
   .container .shop__girl {
-    width: 250px;
+    max-width: 250px;
     height: 250px;
     display: block;
     margin: 0 auto;
@@ -1907,6 +2007,144 @@ textarea {
 }
 .agencyFooterHeader .agencyFooterHeaderMenuItem:hover {
   color: #ef6c00;
+}
+.aviasales {
+  width: 100%;
+  top: 110px;
+  background-color: #f3f7fa;
+}
+.aviasales-logo {
+  padding-top: 1px;
+}
+.aviasales-logo img {
+  display: block;
+  margin: 30px auto;
+  width: 60px;
+  height: 60px;
+}
+.aviasales-container {
+  display: flex;
+  justify-content: center;
+}
+.aviasales-container .aviasales-count-races {
+  width: 232px;
+  height: 252px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+  background-color: #fff;
+  margin-right: 2.1%;
+}
+.aviasales-container .aviasales-count-races h3 {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  font-family: OpenSans;
+  letter-spacing: 0.5px;
+  color: #4a4a4a;
+  text-align: center;
+  margin-top: 20px;
+  text-transform: uppercase;
+}
+.aviasales-container .aviasales-count-races-block {
+  width: 100%;
+  margin: 20px;
+  height: 20px;
+}
+.aviasales-container .aviasales-count-races-block input {
+  width: 20px;
+  height: 20px;
+}
+.aviasales-container .aviasales-count-races-block label {
+  margin: 0 0 0 10px;
+  font-size: 13px;
+  position: relative;
+  top: -5px;
+  color: #4a4a4a;
+}
+.aviasales-container .aviasales-tickets-block {
+  width: 503px;
+  padding: 0;
+}
+.aviasales-container .aviasales-tickets-block-btn {
+  width: 251px;
+  height: 50px;
+  border: solid 1px #dfe5ec;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 0 5px 5px 0;
+  font-family: OpenSans;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.67;
+  letter-spacing: 0.5px;
+  color: #4a4a4a;
+  outline: none;
+}
+.aviasales-container .aviasales-tickets-block-btn.active {
+  width: 252px;
+  height: 50px;
+  background-color: #2196f3;
+  border: solid 1px #dfe5ec;
+  border-radius: 5px 0 0 5px;
+  box-sizing: border-box;
+  font-family: OpenSans;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.67;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+.aviasales-container .aviasales-tickets-block-card {
+  max-width: 503px;
+  border-radius: 5px;
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.1);
+  background-color: #fff;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+.aviasales-container .aviasales-tickets-block-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.aviasales-container .aviasales-tickets-block-card-header:first-child {
+  font-family: OpenSans;
+  font-size: 24px;
+  font-weight: 600;
+  color: #2196f3;
+}
+.aviasales-container .aviasales-tickets-block-card-header div {
+  width: 200px;
+}
+.aviasales-container .aviasales-tickets-block-card-info {
+  display: flex;
+  text-transform: uppercase;
+  font-family: OpenSans;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.aviasales-container .aviasales-tickets-block-card-info-time-count-races,
+.aviasales-container .aviasales-tickets-block-card-info-fly-length,
+.aviasales-container .aviasales-tickets-block-card-info-time {
+  width: 128px;
+  text-align: center;
+}
+.aviasales-container .aviasales-tickets-block-card-info-time-count-races div,
+.aviasales-container .aviasales-tickets-block-card-info-fly-length div,
+.aviasales-container .aviasales-tickets-block-card-info-time div {
+  color: #a0b0b9;
+  font-size: 12px;
+}
+.aviasales-container .aviasales-tickets-block-card-info-time-count-races span,
+.aviasales-container .aviasales-tickets-block-card-info-fly-length span,
+.aviasales-container .aviasales-tickets-block-card-info-time span {
+  font-family: OpenSans;
+  font-size: 14px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: 1.5;
+  color: #4a4a4a;
 }
 .layout {
   position: relative;

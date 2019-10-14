@@ -1,10 +1,13 @@
 .left-side
   flex-basis 25%
   height 100%
+  transition 2s
+
 
   .left-side-block
     width 100%
-    //margin 40px 0 40px 40px
+
+
 
     .profile-card
       width 70%
@@ -68,8 +71,6 @@
       max-width 150px
       margin 40px auto 0
 
-
-
       .social-chat-btn
         width 150px
         height 30px
@@ -91,3 +92,13 @@
           border-radius 30px
           border 1px solid dimgrey
           margin 5px auto
+
+@media all and (max-width: 425px)
+  .left-side
+    max-width 0
+    max-width 200px
+    overflow hidden
+    transition 1s
+    background white
+    position absolute
+    z-index 150

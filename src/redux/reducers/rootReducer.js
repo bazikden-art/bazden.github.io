@@ -4,6 +4,8 @@ import {reducer as formReducer} from "redux-form";
 import {ProfileReducer} from "./profileReducer";
 import {authReducer} from "./authReducer";
 import {agencyReducer} from "./agencyReducer";
+import {friendsReducer} from "./frindsReducer";
+import {aviaSailsReducer} from "./aviaSailsReducer";
 
 
 export default combineReducers({
@@ -11,5 +13,7 @@ export default combineReducers({
     profilePage:ProfileReducer,
     auth:authReducer,
     form: formReducer,
-    agency:agencyReducer
+    agency:agencyReducer,
+    friends:friendsReducer,
+    aviaSails:aviaSailsReducer
 })

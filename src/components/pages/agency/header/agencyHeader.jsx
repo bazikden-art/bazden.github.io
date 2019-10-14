@@ -11,6 +11,7 @@ export const AgencyHeader = ({user}) => {
         setIsOpen(!isOpen)
     }
     const onMouseLeave = () =>{
+        console.log('leave')
         setIsOpen(false)
     }
 
@@ -19,7 +20,7 @@ export const AgencyHeader = ({user}) => {
         <div className='agency-header' onMouseOut={onMouseLeave} >
             <img src={logo} alt=""/>
             <div  className={`AgencyHeaderMenuLogin ${isOpen?' showed':''}`}>
-                <AgencyHeaderMenu/>
+                <AgencyHeaderMenu onMouseLeave={onMouseLeave}/>
                 <div className='agency-login'>
                     <div className='agency-user-info'>
                         <div className='agency-user-name'>

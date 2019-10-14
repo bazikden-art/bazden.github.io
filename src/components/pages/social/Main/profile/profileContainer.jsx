@@ -7,8 +7,11 @@ import {profileAPI} from "../../api/profileApi";
 
 class ProfileContainer extends Component {
     componentDidMount() {
-        const id = this.props.match.params.userId
-        profileAPI.getUserProfile(id)
+        let id = this.props.match.params.userId
+        id  && profileAPI.getUserProfile(id)
+            .then(res => this.props.getUserProfile(res.data))
+
+        !id && !this.props.logined && profileAPI.getUserProfile()
             .then(res => this.props.getUserProfile(res.data))
     }
 
@@ -21,7 +24,8 @@ const mapStateToProps = state => {
 
     return{
         posts: state.profilePage.posts,
-        profile:state.profilePage.userProfile
+        profile:state.profilePage.userProfile,
+        logined:state.auth.logined
     }
 }
 
